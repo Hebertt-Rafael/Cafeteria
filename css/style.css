@@ -1,12 +1,12 @@
 /* ============================================================
-   LE JARDIN DE FLORE — STYLE.CSS (ARQUIVO ÚNICO DE ESTILOS)
+   Le Jardin Fleuri — STYLE.CSS (ARQUIVO ÚNICO DE ESTILOS)
    Arquitetura de CSS Moderno: Tokens, Reset, Layout, Componentes,
    Páginas, Animações e Responsividade.
    ============================================================ */
 
 /* ------------------------------------------------------------
    1. DESIGN TOKENS & VARIÁVEIS CSS (:root)
-   Baseado na paleta oficial: Le Jardin de Flore
+   Baseado na paleta oficial: Le Jardin Fleuri
    ------------------------------------------------------------ */
 :root {
   /* Cores Principais */

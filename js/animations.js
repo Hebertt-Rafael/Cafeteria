@@ -1,7 +1,7 @@
 /**
  * ============================================================
  * animations.js — Módulo de Animações & Interações Fluidas
- * Le Jardin de Flore · v2.0
+ * Le Jardin Fleuri · v2.0
  * ============================================================
  * Contém:
  * - Scroll Reveal via IntersectionObserver (alto desempenho)

@@ -1,7 +1,7 @@
 /**
  * ============================================================
  * main.js — Entry Point Global do Front-end
- * Le Jardin de Flore · v2.0
+ * Le Jardin Fleuri · v2.0
  * ============================================================
  * Carregado em todas as páginas para:
  * 1. Inicializar Navbar e Menu Mobile

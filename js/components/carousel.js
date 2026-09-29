@@ -1,7 +1,7 @@
 /**
  * ============================================================
  * carousel.js — Carrossel Customizado (Sem dependências externas)
- * Le Jardin de Flore · v2.0
+ * Le Jardin Fleuri · v2.0
  * ============================================================
  */
 

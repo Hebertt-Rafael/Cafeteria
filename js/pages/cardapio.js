@@ -1,7 +1,7 @@
 /**
  * ============================================================
  * cardapio.js — Lógica do Cardápio Interativo Dinâmico
- * Le Jardin de Flore · v2.0
+ * Le Jardin Fleuri · v2.0
  * ============================================================
  */
 
@@ -52,6 +52,13 @@ const LeJardinCardapio = (() => {
     try {
       const produtos = await LeJardinData.getProdutos(categoriaId);
 
+      const isSubfolder = window.location.pathname.includes('/template/') || window.location.pathname.includes('/pages/');
+      const getProductImage = (img) => {
+        if (!img) return isSubfolder ? '../img/Cardapio.png' : 'img/Cardapio.png';
+        const cleanPath = img.replace(/^\.\.\//, '');
+        return isSubfolder ? '../' + cleanPath : cleanPath;
+      };
+
       grid.innerHTML = produtos.map(prod => {
         const badge = prod.tags.includes('bestseller') 
           ? `<span class="card-badge badge-bestseller">Mais Pedido</span>`
@@ -63,7 +70,7 @@ const LeJardinCardapio = (() => {
           <article class="product-card reveal-on-scroll">
             <div class="card-img-wrapper">
               ${badge}
-              <img src="../img/Cardapio.png" alt="${prod.nome}" loading="lazy">
+              <img src="${getProductImage(prod.imagem)}" alt="${prod.nome}" loading="lazy" onerror="this.onerror=null; this.src='${isSubfolder ? '../img/Cardapio.png' : 'img/Cardapio.png'}';">
             </div>
             <div class="card-body">
               <span class="card-category">${prod.categoria}</span>

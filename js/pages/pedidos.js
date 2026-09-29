@@ -1,7 +1,7 @@
 /**
  * ============================================================
  * pedidos.js — Lógica de Pedidos & Formulário Reativo
- * Le Jardin de Flore · v2.0
+ * Le Jardin fleuri · v2.0
  * ============================================================
  */
 

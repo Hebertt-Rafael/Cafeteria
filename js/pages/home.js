@@ -1,7 +1,7 @@
 /**
  * ============================================================
  * home.js — Lógica da Página Inicial (Home)
- * Le Jardin de Flore · v2.0
+ * Le Jardin Fleuri · v2.0
  * ============================================================
  */
 
@@ -37,9 +37,13 @@ const LeJardinHome = (() => {
       const allProducts = await LeJardinData.getProdutos('all');
       const featured = allProducts.slice(0, 4); // Seleciona os 4 principais
 
-      const isSubfolder = window.location.pathname.includes('/pages/');
-      const basePath = isSubfolder ? '' : 'pages/';
-      const imgPrefix = isSubfolder ? '../img/' : 'img/';
+      const isSubfolder = window.location.pathname.includes('/template/') || window.location.pathname.includes('/pages/');
+      const basePath = isSubfolder ? '' : 'template/';
+      const getProductImage = (img) => {
+        if (!img) return isSubfolder ? '../img/Cardapio.png' : 'img/Cardapio.png';
+        const cleanPath = img.replace(/^\.\.\//, '');
+        return isSubfolder ? '../' + cleanPath : cleanPath;
+      };
 
       container.innerHTML = featured.map(prod => {
         const badge = prod.tags.includes('bestseller') 
@@ -52,7 +56,7 @@ const LeJardinHome = (() => {
           <article class="product-card reveal-on-scroll">
             <div class="card-img-wrapper">
               ${badge}
-              <img src="${imgPrefix}Cardapio.png" alt="${prod.nome}" loading="lazy">
+              <img src="${getProductImage(prod.imagem)}" alt="${prod.nome}" loading="lazy" onerror="this.onerror=null; this.src='${isSubfolder ? '../img/Cardapio.png' : 'img/Cardapio.png'}';">
             </div>
             <div class="card-body">
               <span class="card-category">${prod.categoria}</span>
